@@ -12,11 +12,10 @@ from CI_agent.jsonhelper import extract_json
 from CI_agent.prompts import system_prompts
 load_dotenv()
 from groq import Groq
-from supabase_module import return_supabase_env_keys
+from firebase import get_env_keys
 def generate_text_with_conversations(messages):
         
-        # client = Groq(api_key=return_supabase_env_keys()["GROQ_API_KEY_1"])
-        client = Groq(api_key="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")
+        client = Groq(api_key=get_env_keys()["GROQ_API_KEY_1"])
         response = client.chat.completions.create(
         # model="llama-3.3-70b-versatile",
         model="qwen-2.5-32b",
@@ -49,7 +48,7 @@ def ci_ai(session_data,user_prompt):
     messages = messages + msg
     messages.append({"role":"user","content":user_prompt})
     turn_count = 1
-    max_turns = 5
+    max_turns = 3
 
     response_list = []
     while turn_count < max_turns:
