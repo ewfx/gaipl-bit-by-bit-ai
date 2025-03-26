@@ -9,10 +9,9 @@ from RCA.jsonhelper import extract_json
 from RCA.prompts import system_prompts
 load_dotenv()
 from groq import Groq
-from supabase_module import return_supabase_env_keys
-
+from firebase import get_env_keys
 def generate_text_with_conversations(messages,model="llama-3.3-70b-versatile"):
-        client = Groq(api_key=return_supabase_env_keys()["GROQ_API_KEY_2"])
+        client = Groq(api_key=get_env_keys()["GROQ_API_KEY_2"])
         response = client.chat.completions.create(
         # model="llama-3.3-70b-versatile",
         model="qwen-2.5-32b",
@@ -48,7 +47,7 @@ def rca_ai(session_data,user_prompt):
     #getting user inputs interactive
     messages.append({"role":"user","content":user_prompt})
     turn_count = 1
-    max_turns = 3
+    max_turns = 5
 
     response_list = []
     while turn_count < max_turns:
