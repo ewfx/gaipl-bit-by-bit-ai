@@ -1,7 +1,7 @@
 import json
 import requests
+from firebase import get_env_keys
 from bs4 import BeautifulSoup
-from supabase_module import return_supabase_env_keys
 def view_to_plain_text(view_content):
     soup = BeautifulSoup(view_content, 'html.parser')
     # Get text content (this strips HTML tags)
@@ -15,7 +15,7 @@ def get_confluence_page(base_url):
         "Accept": "application/json"
     }
     
-    response = requests.get(url, headers=headers, auth=("someonsr045@gmail.com", return_supabase_env_keys()['confluence_key'])) # auth=(username, api_token))
+    response = requests.get(url, headers=headers, auth=("someonsr045@gmail.com", get_env_keys()['confluence_key'])) # auth=(username, api_token))
     # print(response.json())
     if response.status_code!=200:
         return []
@@ -31,7 +31,7 @@ def get_confluence_page(base_url):
 
         kb_url = f"https://someonsr045.atlassian.net/wiki{web_ui_mod}/pages/{page_id}"
         get_kb_content_url = f"https://someonsr045.atlassian.net/wiki/rest/api/content/{page_id}?expand=body.view,metadata,space"
-        kb_content_res = requests.get(get_kb_content_url, headers=headers, auth=("someonsr045@gmail.com",return_supabase_env_keys()['confluence_key'] ))
+        kb_content_res = requests.get(get_kb_content_url, headers=headers, auth=("someonsr045@gmail.com",get_env_keys()['confluence_key'] ))
         if kb_content_res.status_code == 200:
             kb_content_data_html = kb_content_res.json()['body']['view']['value']
             kb_content_data_text = view_to_plain_text(kb_content_data_html)

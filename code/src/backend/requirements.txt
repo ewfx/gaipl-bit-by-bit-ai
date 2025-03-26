@@ -4,6 +4,6 @@ flask
 dotenv
 groq
 python-dotenv
-supabase
 gunicorn
 flask-cors
+firebase-admin

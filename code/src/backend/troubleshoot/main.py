@@ -3,9 +3,9 @@ from troubleshoot.actions import get_confluence_page
 from troubleshoot.prompt import system_prompt
 from troubleshoot.json_help import extract_json
 from groq import Groq
-from supabase_module import return_supabase_env_keys
-# Load environment variables
+from firebase import get_env_keys# Load environment variables
 from troubleshoot.prompt import system_prompt
+from firebase import get_env_keys
 load_dotenv()
 
 # Create an instance of the OpenAI class
@@ -13,11 +13,11 @@ load_dotenv()
 
 
 client = Groq(
-    api_key= return_supabase_env_keys()['GROQ_API_KEY_2']
+    api_key= get_env_keys()['GROQ_API_KEY_2']
 )
 
 
-def generate_text_with_conversation(messages, model = "llama-3.3-70b-versatile", access = return_supabase_env_keys()['HF_ACESS']):
+def generate_text_with_conversation(messages, model = "llama-3.3-70b-versatile", access = get_env_keys()['HF_ACESS']):
     response = client.chat.completions.create(
         model=model,
         messages=messages
@@ -48,7 +48,7 @@ def get_troubleshoot(session_data,user_prompt):
         print("----------------------")
         turn_count += 1
 
-        response = generate_text_with_conversation(messages, model="llama-3.3-70b-versatile", access = return_supabase_env_keys()['HF_ACESS'])
+        response = generate_text_with_conversation(messages, model="llama-3.3-70b-versatile", access = get_env_keys()['HF_ACESS'])
 
         # print(response)
 

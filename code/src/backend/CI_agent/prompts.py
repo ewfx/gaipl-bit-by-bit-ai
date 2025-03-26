@@ -78,13 +78,15 @@ system_prompts = """
     you will be called with this and you will get the data of the node 
 
     action_response = {
-        "ci-name":"cvr001",
-        "ci-id":"cvr001",
-        "ci-health":"down"
+        "ci-name":"",
+        "ci-id":"",
+        "ci-health":"",
+        "cpu-cores":"",
+        "cpu-ram":""
     }
 
-    answer = The node cvr001 is down
-
+    answer = The node cvr001 is ...
+    Note: If you get {} as action response then there is no data available for the ci node so say there is no data available
     Example 2:
     Question: Can you give me last 24 hours stats for cvr001
     Thought: I should check the grafana data for last 24 hours for node cvr001, analyse the data and give a summary of it
@@ -141,18 +143,18 @@ system_prompts = """
     
     you will get the ci data now
 
-    action_response: {"ci-name":"cvr001","ci-id":"cvr001","cpu-cores":4,"cpu-ram":16}
+    action_response: {"ci-name":"","ci-id":"","cpu-cores":,"cpu-ram":}
 
     Answer: as the user have put CPU Load so I will be using cpu-cores that is factor will be value of cpu-cores and factor string will be cpu for the next iteration
 
-    Thought: I need to get the alert data for cvr001 with factor as 4 and factor_string as 16   
+    Thought: I need to get the alert data for cvr001 with factor as the cpu core value and factor_string as cpu   
     Action: 
     {
         "function_name":"get_alert_data",
         "function_params":{
-            "CI_number":"cvr001",
-            "factor":4 ,
-            "factor_string":16 
+            "CI_number": ci number given by the user,
+            "factor":cpu-core value  ,
+            "factor_string":"cpu" 
         }
     }
 

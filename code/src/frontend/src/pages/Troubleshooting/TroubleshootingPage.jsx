@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import './TroubleshootingPage.css';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/user/userSlice'; 
+import Loader from '../../components/Loader/Loader';
 
 const TroubleshootingPage = () => {
   const [messages, setMessages] = useState([]);
@@ -45,6 +46,7 @@ const TroubleshootingPage = () => {
 
   // Function to handle API calls
   const handleBotResponse = async (userMessage) => {
+    setIsLoading(true); // Start loading
     try {
       const response = await fetch('http://127.0.0.1:5000/troubleshoot', {
         method: 'POST',
