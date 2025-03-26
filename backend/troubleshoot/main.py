@@ -40,7 +40,7 @@ def get_troubleshoot(session_data,user_prompt):
     messages.append({"role":"user","content":user_prompt})
 
     turn_count = 1
-    max_turns = 5
+    max_turns = 3
 
 
     while turn_count < max_turns:
