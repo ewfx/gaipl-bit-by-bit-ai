@@ -48,7 +48,7 @@ def rca_ai(session_data,user_prompt):
     #getting user inputs interactive
     messages.append({"role":"user","content":user_prompt})
     turn_count = 1
-    max_turns = 5
+    max_turns = 3
 
     response_list = []
     while turn_count < max_turns:
