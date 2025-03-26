@@ -49,7 +49,6 @@ Some others which will be implemented in future are:
 - Patching Schedule
 - Node Ownership
 - CI Outage Check
-- Something else!
 
 
 ### RCA Consolidation 
