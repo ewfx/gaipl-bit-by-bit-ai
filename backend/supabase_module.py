@@ -3,9 +3,10 @@ import json
 from dotenv import load_dotenv
 load_dotenv()
 import os
+import base64
 SUPABASE_URL = "https://hmnuhtoapsyaiakvnmbu.supabase.co"  # Replace with your Supabase URL
-SUPABASE_KEY = os.getenv("SUPABASE_KEY") # Use service role key if you need write access
-
+SUPABASE_ENCODED_KEY = os.getenv("SUPABASE_ENCODED_KEY") # Use service role key if you need write access
+SUPABASE_KEY = base64.b64decode(SUPABASE_ENCODED_KEY).decode("utf-8")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 bucket_name = "bitbybitbackenddata"
 
