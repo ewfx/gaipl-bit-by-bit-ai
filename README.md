@@ -33,7 +33,7 @@ While solving a user ticket, the platform support requires troubleshooting, acce
 
 
 ## ⚙️ What It Does
-The chatbot has a user-centric, intuitive and interactive interface, with agentic capabilities and contextual reccomendations and data extraction. The chatbot provides these features in 3 major classifications:
+The chatbot has a user-centric, intuitive and interactive interface, with the agentic capabilities and contextual reccomendations and data extraction. The chatbot provides these features in 3 major classifications:
 
 ### Configuration Items 
 To enquire and troubleshoot issues in the context of the configuration items. The present functionalities include: 
