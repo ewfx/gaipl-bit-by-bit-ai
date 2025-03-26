@@ -7,3 +7,4 @@ python-dotenv
 supabase
 gunicorn
 flask-cors
+firebase-admin
