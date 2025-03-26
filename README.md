@@ -18,11 +18,15 @@
 Snowy, by BitByBit.ai, is a work-buddy that every platform support/operation engineer would love to have. This AI Enabled Platform Assistant chatbot serves as a one-stop solution for the platform engineers, where they will be able to perform operations and trigger automations, helping the engineers save the time/effort overhead. 
 
 ## 🎥 Demo
-🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](https://youtu.be/gH6GXmbNFlI)
 🖼️ Screenshots:
 
-![Screenshot 1](link-to-image)
+![Home Page](./artifacts/demo/screenshots/home-page.jpg)
+![Login](./artifacts/demo/screenshots/login-auth.jpg)
+![Configuration Item](./artifacts/demo/screenshots/ci-chat.jpg)
+![RCA Consolidation](./artifacts/demo/screenshots/rca-chat.jpg)
+![Troubleshooting](./artifacts/demo/screenshots/troubleshoot-chat.jpg)
+![Loader](./artifacts/demo/screenshots/loader.jpg)
 
 ## 💡 Inspiration
 While solving a user ticket, the platform support requires troubleshooting, accessing a variety of Knowledge Base articles, running automation scripts, reviewing telemetry / observability metrics and leveraging foundational information about Configuration Items. This involves frequent context switching, leading to a significant time/effort overhead. Being a part of platform team, we have witnessed our platform support teams struggling with this and we realized that if this problem is solved, it can help the platform support teams to support our customers better, with a faster resolution time. 
@@ -45,7 +49,6 @@ Some others which will be implemented in future are:
 - Patching Schedule
 - Node Ownership
 - CI Outage Check
-- Something else!
 
 
 ### RCA Consolidation 
