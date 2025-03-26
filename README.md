@@ -19,7 +19,7 @@ Snowy, by BitByBit.ai, is a work-buddy that every platform support/operation eng
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](https://youtu.be/gH6GXmbNFlI) (if applicable)  
 🖼️ Screenshots:
 
 ![Screenshot 1](link-to-image)
