@@ -16,7 +16,7 @@ const AIAssistant = () => {
   const categories = [
     {
       id: 'configuration',
-      title: 'Configuration Item',
+      title: 'Configuration Items',
       icon: configIcon,
       path: `/${user?.email ? user?.email : "user"}/configuration`
     },
