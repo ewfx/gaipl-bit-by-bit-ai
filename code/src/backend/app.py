@@ -1,16 +1,11 @@
 from flask import Flask, session, request, jsonify
-import os
-from RCA.prompts import system_prompts as rca_prompts
-from CI_agent.prompts import system_prompts as ci_prompts
 from RCA.main import rca_ai
 from CI_agent.main import ci_ai
-import sys
 from troubleshoot.main import get_troubleshoot
-from supabase_module import return_supabase_env_keys
-from troubleshoot.prompt import system_prompt as troubleshoot_prompts
 from flask_cors import CORS
+from firebase import get_env_keys
 app = Flask(__name__)
-app.secret_key = return_supabase_env_keys()["FLASK_SECRET_KEY"]  # Use a secure key in production
+app.secret_key = get_env_keys()["FLASK_SECRET_KEY"]  # Use a secure key in production
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Ensure session storage exists
